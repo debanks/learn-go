@@ -1,0 +1,122 @@
+<script lang="ts" setup>
+    import StoneComponent from '../components/go/Stone.vue';
+    import Stone from '../models/Stone';
+
+    const white = new Stone('white', {x: 0, y:0})
+    const black = new Stone('black', {x: 0, y:0})
+</script>
+
+<template>
+    <section id="updates">
+        <h2><span>Project Updates</span></h2>
+        <div class="updates">
+            <div class="update green">
+                <div class="label">Web Development</div>
+                <a href="/updates/1-setup" class="title"><span class="accent">01.</span> Project Setup</a>
+                <p>
+                    Getting the repository and website ready and available.
+                </p>
+            </div>
+        </div>
+    </section>
+</template>
+
+<style lang="scss" scoped>
+@import '../assets/base.css';
+#updates {
+
+    h2 {
+        font-size: 48px;
+        margin-bottom: 30px;
+        width: 100%;
+        text-align: center;
+
+        span {
+            display: inline-block;
+            position: relative;
+        }
+
+        span:before,
+        span:after {
+            content: "";
+            position: absolute;
+            height: 5px;
+            border-bottom: 1px solid white;
+            border-top: 1px solid white;
+            top: 40px;
+            width: 150px;
+        }
+        span:before {
+            right: 100%;
+            margin-right: 30px;
+        }
+        span:after {
+            left: 100%;
+            margin-left: 30px;
+        }
+    }
+        
+    @media (max-width: 780px) {
+        h2 {
+            font-size: 36px;
+
+            span:before,
+            span:after {
+                top: 30px;
+                width: 50px;
+            }
+        }
+    }
+
+    .updates {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        width: 100%;
+        gap: 10px;
+
+        .update {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            background: rgba(0,0,0, 0.2);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255,255,255,0.01);
+
+            .label {
+                font-size: 12px;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+            }
+
+            &.green {
+                border-top: 2px solid var(--updates-green);
+
+                .label {
+                    color:  var(--updates-green);
+                }
+            }
+
+            .title {
+                font-size: 22px;
+                margin-bottom: 20px;
+                text-decoration: none;
+                color: #fff;
+                display: block;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                span {
+                    font-size: 16px;
+                }
+            }
+
+            p {
+                font-size: 16px;
+
+            }
+        }
+    }
+}
+</style>
+  

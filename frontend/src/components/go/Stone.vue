@@ -29,13 +29,16 @@ const props = defineProps({
 .stone {
     border-radius: 50%;
     position: absolute;
+    margin-left: 2px;
+    box-shadow: var(--shadow);
 
     &.white {
         background: #fff;
-        content: "";
+        background: radial-gradient(circle at 20% 20%, #fff, #666);
     }
     &.black {
         background: #000;
+        background: radial-gradient(circle at 20% 20%, #363636, #000);
     }
 }
 </style>

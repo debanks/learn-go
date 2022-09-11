@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import RandomBoard from '../components/RandomBoard.vue';
+import PlanView from './PlansView.vue';
+import UpdatesView from './UpdatesView.vue';
 </script>
 
 <template>
@@ -17,13 +19,12 @@ import RandomBoard from '../components/RandomBoard.vue';
         </p>
         <a  v-scroll-to="'#updates'" class="btn large">See Updates</a>
       </div>
-      <section id="motivation">
-
-      </section>
+      <PlanView />
+      <UpdatesView />
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import '../assets/base.css';
 .home {
   position: relative;

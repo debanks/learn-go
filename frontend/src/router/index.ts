@@ -10,9 +10,9 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/motivation',
-      name: 'motivation',
-      component: () => import('../views/MotivationView.vue')
+      path: "/updates/1-setup",
+      name: "project-setup",
+      component: () => import('../views/updates/One.vue')
     }
   ]
 })

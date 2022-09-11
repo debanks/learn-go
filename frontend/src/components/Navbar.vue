@@ -1,21 +1,21 @@
 <script setup>
 import { ref } from 'vue'
 import Sidebar from 'primevue/sidebar';
+import {useRoute} from 'vue-router'
 
 let show = ref(false);
+
+const route = useRoute();
 </script>
 
 <template>
     <div class="navbar">
-        <div class="logo"><img src="../assets/logo.svg" class="logo"/></div>
+        <div class="logo"><a href="/"><img src="../assets/logo.svg" class="logo"/></a></div>
         <div class="nav-items">
-            <a class="nav-item" v-scroll-to="'#motivation'">
-                Motivation
-            </a>
-            <a class="nav-item" v-scroll-to="'#plans'">
+            <a class="nav-item" v-scroll-to="'#plans'" v-if="route == 'home'">
                 Plans
             </a>
-            <a class="nav-item" v-scroll-to="'#updates'">
+            <a class="nav-item" v-scroll-to="'#updates'" v-if="route == 'home'">
                 Updates
             </a>
             <a class="btn" href="">Coming Soon</a>
@@ -23,19 +23,13 @@ let show = ref(false);
         </div>
         <Sidebar :visible="show" position="right">
             <div class="mobile-nav">
-                <a class="nav-item" v-scroll-to="{
-                    el: '#motivation',
-                    onDone: () => show = false
-                }">
-                    Motivation
-                </a>
-                <a class="nav-item" v-scroll-to="{
+                <a class="nav-item" v-if="route == 'home'" v-scroll-to="{
                     el: '#plans',
                     onDone: () => show = false
                 }">
                     Plans
                 </a>
-                <a class="nav-item" v-scroll-to="{
+                <a class="nav-item" v-if="route == 'home'" v-scroll-to="{
                     el: '#updates',
                     onDone: () => show = false
                 }">
@@ -78,7 +72,7 @@ let show = ref(false);
   width: 100%;
   padding: 25px 40px;
   z-index: 11;
-  background-color: var(--background-color);
+  background-color: rgba(0, 17, 35, 0.7);
 }
 html:not([data-scroll='0']) .navbar {
   box-shadow: 0 10px 30px -10px rgba(0, 12, 25, 0.7);
