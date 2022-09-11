@@ -1,53 +1,13 @@
-/* color palette from <https://github.com/vuejs/theme> */
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
-
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
-
-  --vt-c-indigo: #2c3e50;
-
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
-}
-
-/* semantic color variables for this project */
-:root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
-
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
-
-  --section-gap: 160px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
-
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
-
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
-  }
+  --color-background: rgba(0, 17, 35, 1);
+  --color-accent:#0fb7fe;
+  --button-hover: rgba(255,255,255,0.15);
+  --translucent-white: rgba(255,255,255,0.3);
+  --transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+  --shadow: rgba(0, 0, 0, 0.2) 0px 3px 10px;
+  --hover-shadow: rgba(0, 0, 0, 0.2) 0px 5px 12px;
+  --gray: #8892b0;
+  --translucent-green: rgba(0, 35, 17, 0.85);
 }
 
 *,
@@ -71,4 +31,30 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.accent {
+  color: var(--color-accent);
+}
+
+.btn {
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  padding: 12px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: var(--button-hover);
+}
+
+.btn.large {
+  font-size: 20px;
+  padding: 15px 24px;
+}
+
+.shadow {
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
