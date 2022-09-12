@@ -1,21 +1,22 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import Sidebar from 'primevue/sidebar';
 import {useRoute} from 'vue-router'
 
 let show = ref(false);
 
 const route = useRoute();
+const name = computed(() =>route.name)
 </script>
 
 <template>
     <div class="navbar">
         <div class="logo"><a href="/"><img src="../assets/logo.svg" class="logo"/></a></div>
         <div class="nav-items">
-            <a class="nav-item" v-scroll-to="'#plans'" v-if="route == 'home'">
+            <a class="nav-item" v-scroll-to="'#plans'" v-if="name == 'home'">
                 Plans
             </a>
-            <a class="nav-item" v-scroll-to="'#updates'" v-if="route == 'home'">
+            <a class="nav-item" v-scroll-to="'#updates'" v-if="name == 'home'">
                 Updates
             </a>
             <a class="btn" href="">Coming Soon</a>
@@ -23,13 +24,13 @@ const route = useRoute();
         </div>
         <Sidebar :visible="show" position="right">
             <div class="mobile-nav">
-                <a class="nav-item" v-if="route == 'home'" v-scroll-to="{
+                <a class="nav-item" v-if="name == 'home'" v-scroll-to="{
                     el: '#plans',
                     onDone: () => show = false
                 }">
                     Plans
                 </a>
-                <a class="nav-item" v-if="route == 'home'" v-scroll-to="{
+                <a class="nav-item" v-if="name == 'home'" v-scroll-to="{
                     el: '#updates',
                     onDone: () => show = false
                 }">

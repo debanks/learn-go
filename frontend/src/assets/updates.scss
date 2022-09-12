@@ -37,11 +37,25 @@ section {
 
         .toc {
             margin: 5px 10px;
+            cursor: pointer;
+            color: var(--color-accent);
         }
     }
 
     hr {
         width: 100%;
         margin: 15px 0 10px 0
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+
+    a {
+        color: var(--color-accent);
+    }
+
+    img {
+        max-width: 100%;
     }
 }

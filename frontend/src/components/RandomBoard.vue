@@ -4,10 +4,22 @@ import Stone from '../models/Stone';
 import StoneComponent from './go/Stone.vue'
 
 const props = defineProps({
-    size: Number,
-    backgroundColor: String,
-    lineColor: String,
-    numPieces: Number
+    size: {
+        type: Number,
+        required: true
+    },
+    backgroundColor: {
+        type: String,
+        required: true
+    },
+    lineColor: {
+        type: String,
+        required: true
+    },
+    numPieces: {
+        type: Number,
+        required: true
+    }
 });
 
 const pieces: Stone[] = [];
@@ -26,18 +38,18 @@ for (let i = 0; i < props.numPieces; i++) {
 
 <template>
     <div class="board" :style="{
-        'background': this.backgroundColor
+        'background': backgroundColor
     }">
-        <div v-for="n in (this.size)" class="line vertical" :key="n" :style="{
-            'left': ((n-1) * 100 / (this.size - 1)) + '%',
-            'background': this.lineColor
+        <div v-for="n in (size)" class="line vertical" :key="n" :style="{
+            'left': ((n-1) * 100 / (size - 1)) + '%',
+            'background': lineColor
         }"></div>
-        <div v-for="n in (this.size)" class="line horizontal" :key="n" :style="{
-            'top': ((n-1) * 100 / (this.size - 1)) + '%',
-            'background': this.lineColor
+        <div v-for="n in (size)" class="line horizontal" :key="n" :style="{
+            'top': ((n-1) * 100 / (size - 1)) + '%',
+            'background': lineColor
         }"></div>
 
-        <StoneComponent v-for="(piece, key) in pieces" :key="key" :stone="piece" :size="0.8 * ( 100 / (this.size - 1))" :borderRowSize="(100 / (this.size - 1))"/>
+        <StoneComponent v-for="(piece, key) in pieces" :key="key" :stone="piece" :size="0.8 * ( 100 / (size - 1))" :borderRowSize="(100 / (size - 1))"/>
     </div>
 </template>
 
