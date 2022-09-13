@@ -19,14 +19,14 @@ section {
     h1 {
         font-size: 48px;
         font-weight: 700;
-        margin: 10px 0 40px 0;
+        margin: 10px 0 20px 0;
     }
 
     .banner {
         img {
             width: 100%
         }
-        margin-bottom: 30px;
+        margin: 20px 0 30px 0;
     }
 
     .index {
@@ -39,6 +39,11 @@ section {
             margin: 5px 10px;
             cursor: pointer;
             color: var(--color-accent);
+
+            span {
+                width: 15px;
+                display: inline-block;
+            }
         }
     }
 
@@ -49,6 +54,24 @@ section {
 
     h2 {
         font-size: 36px;
+        margin: 30px 0 5px 0;
+    }
+
+    h3 {
+        color: #fff;
+        font-size: 28px;
+        margin: 20px 0 5px 0;
+    }
+
+    
+    @media (max-width: 800px) {
+        h2 {
+            font-size: 24px;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
     }
 
     a {
@@ -57,5 +80,51 @@ section {
 
     img {
         max-width: 100%;
+    }
+
+    pre {
+        counter-reset: line;
+        text-align: left;
+        background: #040708;
+        white-space: pre-line;
+        width: 100%;
+        max-height: 300px;
+        overflow: auto;
+
+        code {
+            counter-increment: line;
+            white-space: pre;
+            margin-right: 20px;
+
+            &:before {
+                content: counter(line);
+                text-align: center;
+                width: 30px;
+                margin-right: 10px;
+                display: inline-block;
+                background: rgba(255,255,255,0.2);
+                color: var(--color-accent)
+            }
+        }
+    }
+
+    .columns {
+        display: grid;
+        gap: 10px;
+
+        &.two {
+            grid-template-columns: repeat(2 ,1fr);
+        }
+
+        .col {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            min-width: 0;
+        }
+    }
+        
+    @media (max-width: 780px) {
+        .columns.two {
+            grid-template-columns: repeat(1,1fr);
+        }
     }
 }

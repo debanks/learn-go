@@ -11,10 +11,17 @@
         <h2><span>Project Updates</span></h2>
         <div class="updates">
             <div class="update green">
-                <div class="label">Web Development</div>
+                <div class="label">Project Management</div>
                 <a href="/updates/1-setup" class="title"><span class="accent">01.</span> Project Setup</a>
                 <p>
                     Getting the repository and website ready and available.
+                </p>
+            </div>
+            <div class="update purple">
+                <div class="label">Web Development</div>
+                <a href="/updates/2-initial" class="title"><span class="accent">02.</span> Initial Code</a>
+                <p>
+                    Walking through some of the initial code fragments used on the initial launch of the website.
                 </p>
             </div>
         </div>
@@ -95,6 +102,14 @@
                 }
             }
 
+            &.purple {
+                border-top: 2px solid var(--updates-purple);
+
+                .label {
+                    color:  var(--updates-purple);
+                }
+            }
+
             .title {
                 font-size: 22px;
                 margin-bottom: 20px;
@@ -115,6 +130,18 @@
                 font-size: 16px;
 
             }
+        }
+    }
+        
+    @media (max-width: 1000px) {
+        .updates {
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+        
+    @media (max-width: 780px) {
+        .updates {
+            grid-template-columns: repeat(1,1fr);
         }
     }
 }

@@ -13,6 +13,11 @@ const router = createRouter({
       path: "/updates/1-setup",
       name: "project-setup",
       component: () => import('../views/updates/One.vue')
+    },
+    {
+      path: "/updates/2-initial",
+      name: "initial-code",
+      component: () => import('../views/updates/Two.vue')
     }
   ]
 })

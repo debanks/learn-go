@@ -2,6 +2,7 @@
 import { ref, computed } from 'vue'
 import Sidebar from 'primevue/sidebar';
 import {useRoute} from 'vue-router'
+import Button from 'primevue/button';
 
 let show = ref(false);
 
@@ -22,7 +23,7 @@ const name = computed(() =>route.name)
             <a class="btn" href="">Coming Soon</a>
             <Button class="burger" icon="pi pi-bars" @click="show = true" />
         </div>
-        <Sidebar :visible="show" position="right">
+        <Sidebar v-model:visible="show" position="right">
             <div class="mobile-nav">
                 <a class="nav-item" v-if="name == 'home'" v-scroll-to="{
                     el: '#plans',
@@ -63,7 +64,7 @@ const name = computed(() =>route.name)
   font-size: 24px !important;
 }
 .burger:hover {
-  background: var(--button-hover);
+  background: var(--button-hover) !important;
 }
 .navbar {
   position: fixed;

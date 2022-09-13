@@ -1,9 +1,6 @@
-<script setup lang="ts">
-</script>
-
 <template>
     <section class="update">
-        <div class="tag">Web Development</div>
+        <div class="tag">Project Management</div>
         <h1>Project Setup</h1>
         <div class="banner">
             <img src="../../assets/coding.png"/>
@@ -100,6 +97,10 @@ section {
     border-top: 3px solid  var(--updates-green);
     color: var(--gray);
     line-height: 2;
+
+    .tag {
+        color: var(--updates-green);
+    }
 
     .toc span {
         color: var(--updates-green);

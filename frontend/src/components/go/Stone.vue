@@ -12,14 +12,14 @@ const props = defineProps({
 <template>
     <div class="stone" 
         :class="{
-            'white': this.stone.color === 'white',
-            'black': this.stone.color === 'black',
+            'white': stone.color === 'white',
+            'black': stone.color === 'black',
         }"
         :style="{
-            'width': this.size + '%',
-            'height': this.size + '%',
-            'top': (this.stone.coordinates.y * this.borderRowSize - this.size / 2) +'%',
-            'left': (this.stone.coordinates.x * this.borderRowSize - this.size / 2) +'%'
+            'width': size + '%',
+            'height': size + '%',
+            'top': (stone.coordinates.y * borderRowSize - size / 2) +'%',
+            'left': (stone.coordinates.x * borderRowSize - size / 2) +'%'
         }"
     ></div>
 </template>
@@ -31,7 +31,6 @@ const props = defineProps({
     position: absolute;
     margin-left: 2px;
     box-shadow: var(--shadow);
-
     &.white {
         background: #fff;
         background: radial-gradient(circle at 20% 20%, #fff, #666);
