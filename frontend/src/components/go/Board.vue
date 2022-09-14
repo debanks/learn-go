@@ -52,6 +52,18 @@
             'height': size + '%'
         };
     }
+    
+    function getAvailablePositions() {
+        const spaces: number[] = [];
+
+        for (let i = 0; i < props.size * props.size; i++) {
+            if (!(i in placed.value)) {
+                spaces.push(i);
+            }
+        }
+
+        return spaces;
+    }
     </script>
     
     <template>
@@ -64,7 +76,7 @@
                     'top': ((n-1) * 100 / (size - 1)) + '%'
                 }"></div>
 
-                <div class="piece-selection" v-for="n in (size *  size)" v-if="!placed.includes(n)" :key="n" :style="getHoverStyle(n)" @click="() => placeStone(n)">
+                <div class="piece-selection" v-for="n in getAvailablePositions()" :key="n" :style="getHoverStyle(n)" @click="() => placeStone(n)">
                     <StoneComponent class="hover-stone" :stone="hoverStone(n)" 
                         :size="0.8 * ( 100 / (size - 1))" :borderRowSize="(100 / (size - 1))"/>
                 </div>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-    import { ref, defineProps, type PropType } from 'vue';
-    import type { Ref } from 'vue';
-    import Stone from '../../models/Stone';
+    import { ref, defineProps } from 'vue';
+    import type { PropType } from 'vue';
+    import type Stone from '../../models/Stone';
     import StoneComponent from './Stone.vue'
     
     const props = defineProps({
