@@ -20,7 +20,7 @@ const name = computed(() =>route.name)
             <a class="nav-item" v-scroll-to="'#updates'" v-if="name == 'home'">
                 Updates
             </a>
-            <a class="btn" href="">Coming Soon</a>
+            <a class="btn" href="/play">Play</a>
             <Button class="burger" icon="pi pi-bars" @click="show = true" />
         </div>
         <Sidebar v-model:visible="show" position="right">
@@ -37,7 +37,7 @@ const name = computed(() =>route.name)
                 }">
                     Updates
                 </a>
-                <a class="btn" href="">Coming Soon</a>
+                <a class="btn" href="/play">Play</a>
             </div>
         </Sidebar>
     </div>

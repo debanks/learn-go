@@ -10,11 +10,11 @@
     <section id="updates">
         <h2><span>Project Updates</span></h2>
         <div class="updates">
-            <div class="update green">
-                <div class="label">Project Management</div>
-                <a href="/updates/1-setup" class="title"><span class="accent">01.</span> Project Setup</a>
+            <div class="update purple">
+                <div class="label">Web Development</div>
+                <a href="/updates/3-board" class="title"><span class="accent">03.</span> Go Board</a>
                 <p>
-                    Getting the repository and website ready and available.
+                    Digging into what is Go and how we can set up and interactive board to play on.
                 </p>
             </div>
             <div class="update purple">
@@ -22,6 +22,13 @@
                 <a href="/updates/2-initial" class="title"><span class="accent">02.</span> Initial Code</a>
                 <p>
                     Walking through some of the initial code fragments used on the initial launch of the website.
+                </p>
+            </div>
+            <div class="update green">
+                <div class="label">Project Management</div>
+                <a href="/updates/1-setup" class="title"><span class="accent">01.</span> Project Setup</a>
+                <p>
+                    Getting the repository and website ready and available.
                 </p>
             </div>
         </div>
@@ -83,10 +90,14 @@
 
         .update {
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            background: rgba(0,0,0, 0.2);
+            background: rgba(0,0,0, 0.4);
             padding: 30px;
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(255,255,255,0.01);
+            box-shadow: (255, 255, 255, 0.05) 0px 3px 10px;
+            border: 1px solid rgba(255,255,255,0.05);
+
+            &:hover {
+                box-shadow: rgb(0, 39, 80) 0px 3px 10px;
+            }
 
             .label {
                 font-size: 12px;

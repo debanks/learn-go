@@ -10,14 +10,24 @@ const router = createRouter({
       component: HomeView
     },
     {
+      path: "/play",
+      name: "play",
+      component: () => import('../views/PlayView.vue')
+    },
+    {
       path: "/updates/1-setup",
-      name: "project-setup",
+      name: "update-1",
       component: () => import('../views/updates/One.vue')
     },
     {
       path: "/updates/2-initial",
-      name: "initial-code",
+      name: "update-2",
       component: () => import('../views/updates/Two.vue')
+    },
+    {
+      path: "/updates/3-board",
+      name: "update-3",
+      component: () => import('../views/updates/Three.vue')
     }
   ]
 })
