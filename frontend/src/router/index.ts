@@ -28,6 +28,11 @@ const router = createRouter({
       path: "/updates/3-board",
       name: "update-3",
       component: () => import('../views/updates/Three.vue')
+    },
+    {
+      path: "/updates/4-capture",
+      name: "update-4",
+      component: () => import('../views/updates/Four.vue')
     }
   ]
 })

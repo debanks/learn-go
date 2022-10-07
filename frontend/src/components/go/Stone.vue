@@ -14,6 +14,7 @@ const props = defineProps({
         :class="{
             'white': stone.color === 'white',
             'black': stone.color === 'black',
+            'transparent': stone.transparent,
         }"
         :style="{
             'width': size + '%',
@@ -38,6 +39,9 @@ const props = defineProps({
     &.black {
         background: #000;
         background: radial-gradient(circle at 20% 20%, #363636, #000);
+    }
+    &.transparent {
+        opacity: 0.8;
     }
 }
 </style>

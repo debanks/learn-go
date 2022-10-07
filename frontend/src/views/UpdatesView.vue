@@ -10,6 +10,13 @@
     <section id="updates">
         <h2><span>Project Updates</span></h2>
         <div class="updates">
+            <div class="update orange">
+                <div class="label">Learning Go</div>
+                <a href="/updates/4-capture" class="title"><span class="accent">04.</span> Capturing Stones</a>
+                <p>
+                    We need to start adding the rules of Go to the board, so we dive into those rules.
+                </p>
+            </div>
             <div class="update purple">
                 <div class="label">Web Development</div>
                 <a href="/updates/3-board" class="title"><span class="accent">03.</span> Go Board</a>
@@ -118,6 +125,14 @@
 
                 .label {
                     color:  var(--updates-purple);
+                }
+            }
+
+            &.orange {
+                border-top: 2px solid var(--updates-orange);
+
+                .label {
+                    color:  var(--updates-orange);
                 }
             }
 

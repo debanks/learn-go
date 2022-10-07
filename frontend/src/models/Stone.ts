@@ -10,11 +10,13 @@ class Stone {
     public color: colors;
     public state: pieceStates;
     public coordinates: ICoordinates;
+    public transparent: Boolean;
     
-    constructor(color: colors, coordinates: ICoordinates) {
+    constructor(color: colors, coordinates: ICoordinates, transparent = false) {
         this.color = color;
         this.coordinates = coordinates;
         this.state = 'alive';
+        this.transparent = transparent;
     }
 }
 

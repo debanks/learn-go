@@ -2,7 +2,9 @@
     import { ref, defineProps } from 'vue';
     import type { PropType } from 'vue';
     import type Stone from '../../models/Stone';
+    import type Icon from '../../models/Icon';
     import StoneComponent from './Stone.vue'
+    import IconComponent from './Icon.vue'
     
     const props = defineProps({
         size: {
@@ -12,13 +14,16 @@
         stones: {
             type: Array as PropType<Array<Stone>>,
             required: true
+        },
+        icons: {
+            type: Array as PropType<Array<Icon>>,
+            default: []
+        },
+        fontSize: {
+            type: String,
+            default: '14px'
         }
     });
-    
-    const pieces = ref<Stone[]>([]);
-    const placed = ref<Number[]>([]);
-
-    const color = ref('white');
     </script>
     
     <template>
@@ -32,6 +37,9 @@
                 }"></div>
         
                 <StoneComponent v-for="(piece, key) in stones" :key="key" :stone="piece" 
+                    :size="0.8 * ( 100 / (size - 1))" :borderRowSize="(100 / (size - 1))"/>
+        
+                <IconComponent v-for="(icon, key) in icons" :key="key" :icon="icon" :fontSize="fontSize"
                     :size="0.8 * ( 100 / (size - 1))" :borderRowSize="(100 / (size - 1))"/>
             </div>
         </div>
